@@ -1,0 +1,61 @@
+﻿@model CfkkWeb.Models.NewsArticleModel
+@{
+    ViewData["Title"] = "Nový článek";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@* <style>
+    /* Custom Styles for Summernote Editor */
+    #summernote-editor {
+        background-color: #212529 !important;
+        border: 1px solid #ccc !important; 
+    }
+
+    .note-editable {
+        background-color: #212529 !important;
+    }
+
+    
+    textarea.form-control {
+        background-color: #212529 !important;
+        border: 1px solid #ccc !important; 
+    }
+</style> *@
+
+
+<h2>Nový článek</h2>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@using (Html.BeginForm("NewNewsArticle", "NewsArticle", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group col-md-3">
+        <label class="form-label col-md-2">Titulek</label>
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title,"", new {@class = "text-danger"})
+    </div>
+    <div class="form-group col-md-3">
+        <label class="form-label col-md-2">Text</label>
+        @Html.TextAreaFor(m => m.Text, new { @class = "form-control editor",  })
+        @Html.ValidationMessageFor(m => m.Text, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group col-md-3">
+        <label class="form-label col-md-4">Uváděcí text</label>
+        @Html.TextAreaFor(m => m.ShortDesc, new { @class = "form-control editor", })
+        @Html.ValidationMessageFor(m => m.ShortDesc, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group col-md-3 mb-2">
+        <label class="form-label col-md-2">Autor</label>
+        @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Author, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group col-md-3 mb-3">
+        <label for="Picture">Obrázek</label>
+        <input type="file" class="form-control" name="Picture" />
+    </div>
+
+    <button type="submit" class="btn btn-secondary mb-1">Vytvořit</button>
+}
+
+

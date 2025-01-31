@@ -1,0 +1,20 @@
+﻿@model CfkkWeb.Models.NewsArticleModel
+@{
+    var title = Model.Title;
+    ViewData["Title"] = $"{title}";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-4">
+    <h2 class="text-center">@Model.Title</h2>
+    <hr class="border border-warning border-1 opacity-50" />
+    <div class="text-center">
+        <img class="img-fluid rounded" src="@Model.PicturePath" />
+    </div>
+    <p class="text-justify mt-3">@Model.Text</p>
+    <div class="text-end text-light">
+        <span>@Model.Author</span> <span>dne</span> <span>@Model.CreatedDate.ToString("dd.MM.yyyy")</span>
+    </div>
+</div>
+
+

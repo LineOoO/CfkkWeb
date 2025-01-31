@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mappings\Club.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\NewsArticle.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Belt.hbm.xml" />
+    <EmbeddedResource Include="Mappings\UserRole.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Role.hbm.xml" />
+    <EmbeddedResource Include="Mappings\User.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Member.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Club.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="MySql.Data.EntityFramework" Version="9.1.0" />
+    <PackageReference Include="NHibernate" Version="5.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Club\NewClub.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Member\Edit.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Member\NewMember.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\news_images\" />
+  </ItemGroup>
+
+</Project>

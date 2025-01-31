@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="CfkkWeb" namespace="CfkkWeb.Mappings">
+	<class name="UserRole" table="wp_userroles" dynamic-update="true" >
+		<cache usage="read-write"/>
+		<composite-id>
+			<key-many-to-one name="User" class="CfkkWeb.Mappings.User" column="UserId" />
+			<key-many-to-one name="Role" class="CfkkWeb.Mappings.Role" column="RoleId" />
+		</composite-id>
+	</class>
+</hibernate-mapping>

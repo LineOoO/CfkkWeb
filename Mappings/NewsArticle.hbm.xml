@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="CfkkWeb" namespace="CfkkWeb.Mappings">
+	<class name="NewsArticle" table="wp_articles" dynamic-update="true" >
+		<cache usage="read-write"/>
+		<id name="Id" column="Id" type="Int32">
+			<generator class="identity" />
+		</id>
+		<property name="Title"  type="string"/>
+		<property name="Text"  type="string"/>
+		<property name="PicturePath"  type="string"/>
+		<property name="Author"  type="string"/>
+		<property name="CreatedDate"  type="datetime"/>
+		<property name="UpdatedDate"  type="datetime"/>
+		<property name="IsPublished"  type="boolean"/>
+		<property name="ShortDesc"  type="string"/>
+	</class>
+</hibernate-mapping>

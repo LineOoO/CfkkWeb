@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="CfkkWeb" namespace="CfkkWeb.Mappings">
+	<class name="User" table="wp_users" dynamic-update="true" >
+		<cache usage="read-write"/>
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="Username"  type="string" not-null="true"/>
+		<property name="PasswordHash" not-null="true"/>
+		<property name="Email"  type="string"/>
+		<property name="IsAdmin"  type="boolean"/>
+	</class>
+</hibernate-mapping>

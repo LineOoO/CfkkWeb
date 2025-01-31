@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Přihlásit se";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Příhlásit se</h1>
+
+@Html.ValidationSummary(true, "Opravte prosím následující chyby:", new { @class = "text-danger" })
+@using (Html.BeginForm("Login", "Account", FormMethod.Post)) 
+{
+    <div class="form-group col-md-4">
+        <label>Uživatelské jméno</label>
+        <input type="text" class="form-control" name="Username" />
+        
+    </div>
+
+    <div class="form-group col-md-4">
+        <label>Heslo</label>
+        <input type="password" class="form-control" name="Password" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-secondary">Přihlásit se</button>
+}

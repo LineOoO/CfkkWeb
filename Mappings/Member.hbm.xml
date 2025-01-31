@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="CfkkWeb" namespace="CfkkWeb.Mappings">
+	<class name="Member" table="wp_member" dynamic-update="true" >
+		<cache usage="read-write"/>
+		<id name="Id" column="Id" type="Int32">
+			<generator class="identity" />
+		</id>
+		<property name="FirstName"  type="string"/>
+		<property name="LastName"  type="string"/>
+		<property name="Email"  type="string"/>
+		<property name="BirthDate"  type="datetime"/>
+		<property name="PhoneNum"  type="string"/>
+		<property name="wp_club"  type="int"/>
+		<property name="wp_belt"  type="int"/>
+	</class>
+</hibernate-mapping>

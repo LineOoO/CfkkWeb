@@ -1,0 +1,35 @@
+﻿@model CfkkWeb.Models.ClubListModel
+@{
+    ViewData["Title"] = "Kluby";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kluby</h2>
+<div class="col-md-4">
+    <table class="table table-responsive-sm  table-striped table-dark text-light">
+        <thead>
+            <tr>
+                <th>Název</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        
+        @foreach (var club in Model.Clubs)
+        {
+            <tr>
+                <td>@club.Name</td>
+                <td><a href="@Url.Action("Edit","Club", new { id = club.Id })"><i class="bi bi-pen-fill"></i></a></td>
+                @if(club.Name != "bez klubu"){
+                    <td><a href="@Url.Action("Delete","Club", new { id = club.Id })" data-del-confirm="Opravdu vymazat klub?"><i class="bi bi-trash3-fill"></i></a></td>
+                }
+                else{
+                    <td></td>
+                }
+            </tr>
+        }
+    </table>
+</div>
+
+
+<button class="btn btn-secondary" onclick="location.href='@Url.Action("NewClub","Club")'">Přidat klub</button>
