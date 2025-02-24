@@ -92,44 +92,6 @@ a:hover {
     border-radius: 8px; 
 }
 
-.accordion-dark {
-    background-color: #212529; /* Bootstrap dark background */
-    color: #f8f9fa; /* Light text */
-}
-
-    /* Darken accordion items */
-    .accordion-dark .accordion-item {
-        background-color: #212529;
-    }
-
-    /* Style the accordion headers */
-    .accordion-dark .accordion-button {
-        background-color: #212529; /* Slightly lighter dark background */
-        color: #ffd32c; /* Light text */
-        border: none; /* Remove default border */
-        border-radius: 0.25rem; /* Rounded corners */
-        padding: 0.75rem 1rem; /* Add padding */
-        transition: background-color 0.3s ease; /* Smooth hover effect */
-    }
-
-        /* Hover effect for accordion headers */
-        .accordion-dark .accordion-button:hover {
-            background-color: #6c757d; /* Darker hover background */
-        }
-
-.accordion-button::after {
-    color: #ffc107; /* Yellow color */
-    transition: transform 0.3s ease; /* Smooth rotation animation */
-}
-
-
-    /* Accordion body styles */
-    .accordion-dark .accordion-body {
-        background-color: #212528; /* Slightly lighter dark background */
-        color: #f8f9fa; /* Light text */
-        padding: 1rem; /* Add padding */
-    }
-
 
 .custom-carousel {
     max-width: 100%; /* Full width */

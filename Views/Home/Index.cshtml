@@ -48,7 +48,7 @@
 
 
 <div class="row pb-3">
-    @foreach (var article in Model.PublishedArticles)
+    @foreach (var article in Model.PublishedArticles.OrderByDescending(x => x.CreatedDate).Take(3))
     {
         <div class="col-md-4 mb-3 d-flex align-items-stretch">
             <div class="card bg-dark" style="width: 100%;">

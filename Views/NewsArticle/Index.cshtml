@@ -30,7 +30,7 @@
                 <th></th>
             </tr>
             <tbody>
-                @foreach (var article in Model.AllArticles)
+                @foreach (var article in Model.AllArticles.OrderByDescending(x => x.CreatedDate))
                 {
                     <tr>
                         <td><a href="@Url.Action("Detail","NewsArticle", new { id = article.Id })"><i class="bi bi-search"></i></a></td>
@@ -70,7 +70,7 @@
                 <th></th>
             </tr>
             <tbody>
-                @foreach (var article in Model.PublishedArticles)
+                @foreach (var article in Model.PublishedArticles.OrderByDescending(x => x.CreatedDate))
                 {
                     <tr>
                         <td><a href="@Url.Action("Detail","NewsArticle", new { id = article.Id })"><i class="bi bi-search"></i></a></td>
@@ -109,7 +109,7 @@
                 <th></th>
             </tr>
             <tbody>
-                @foreach (var article in Model.UnpublishedArticles)
+                @foreach (var article in Model.UnpublishedArticles.OrderByDescending(x => x.CreatedDate))
                 {
                     <tr>
                         <td><a href="@Url.Action("Detail","NewsArticle", new { id = article.Id })"><i class="bi bi-search"></i></a></td>
