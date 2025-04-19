@@ -4,7 +4,7 @@
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
 		<property name="connection.connection_string">
-			Server=localhost;Database=cfkk;User ID=root;Password=;
+			Server=localhost;Database=cfkkdev;User ID=root;Password=;
 		</property>
 		<property name="dialect">NHibernate.Dialect.MySQL5Dialect</property>
 		<property name="show_sql">true</property>

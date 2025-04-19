@@ -1,20 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Kajukenbo";
 }
-<h1 class="text-center">Bojové umění Kajukenbo <img class="img-fluid" src="~/img/logo_kajukenbo.png" style="width: 80px; height: 80px"/></h1>
+<h1 class="text-center" data-aos="fade-up">Bojové umění Kajukenbo <img class="img-fluid" src="~/img/logo_kajukenbo.png" style="width: 80px; height: 80px" /></h1>
 
 <div class="rectangle-container">
-    <h5><i class="bi bi-yin-yang"></i> Co je kajukenbo?</h5>
-    <p>
+    <h5 data-aos="fade-up"><i class="bi bi-yin-yang"></i> Co je kajukenbo?</h5>
+    <p data-aos="fade-up">
         Kajukenbo je hybridní bojové umění pocházející z Havajských ostrovů a vyniká svými technikami, které jsou maximálně účinné při sebeobraně.
     </p>
-    <div class="text-center">
+    <div class="text-center" data-aos="fade-up">
         <img  class="img-fluid"src="~/img/kajukenbo_vyznam.png" style="width: 1000px; height: auto;" />
     </div>
     <br />
-    <h5><i class="bi bi-geo-alt-fill"></i> Kajukenbo v české republice</h5>
-    <p>
-        V letech 2013 a 2014 se pod vedením Ivana Spišiaka začali Kajukenbu věnovat první zájemci z České republiky. Byly pořádány první semináře s cílem rozvinout Kajukenbo i v České republice. V následujících letech získávali jednotliví zájemci pod vedením profesora Ivana Spišiaka, který získal 8 dan. zkušenosti v Kajukenbo.
+    <h5 data-aos="fade-up"><i class="bi bi-geo-alt-fill"></i> Kajukenbo v české republice</h5>
+
+    <p data-aos="fade-up">
+        Byly pořádány první semináře s cílem rozvinout Kajukenbo i v České republice. V následujících letech získávali jednotliví zájemci pod vedením profesora Ivana Spišiaka, který získal 8 dan. zkušenosti v Kajukenbo.
+        profesor Spišiak je členem mnoha národních i mezinárodních institucí v oblasti bojových umění a aktivně podporuje rozvoj bojových umění. Je čestným členem České federace kempo a kajukenbo z.s. a současně zde působí jako předseda Kolegia danů a současně jako předseda Technicko-odborné komise. To je zárukou, že v rámci CFKK je udržována ta nejvyšší úroveň kvality
+        a odbornosti.
+        Své znalosti a zkušenosti nadále předává nejen svým studentům.
+    </p>
+    <p data-aos="fade-up">
+        K těm patří i Sibak Marian Němec, 2. dan Kajukenbo. O bojová umění se zajímal již od mládí v 90. letech minulého století.  Nejprve taekwondo, následně shotokan karate, aby skončil na dlouhé období u karate goju-ryu. Absolvoval trenérskou školu na Falkultě tělesné výchovy a sportu Univerzity Karlovy. V průběhu následujících let se seznamoval i s dalšími bojovými uměními a systémy jako judo, jiu-jitsu , krav-maga, systema.  V roce 2012 se zaměřil na trénink sebeobrany, aby se v roce 2014 seznámil s havajským bojovým uměním Kajukenbo, které společně se sebeobranou aktivně trénuje pod vedením profesora Ivana Spišiaka. Kombinace měkkých i tvrdých technik na něj zapůsobila. V roce 2015 byl pozván na seminář pod vedením mistrů Ivana Spišiaka a Petra Žáka (7. Duan Kajukenbo) z Asia Budo Center Slovakia. První tři hodiny kajukenbo v životě, popis, historie, techniky i kombinace, to vše mu okamžitě učarovalo natolik, že začal řešit, kde a jak se začít více vzdělávat. Bohužel tehdejší zázemí v ČR bylo prakticky nulové a bylo jen pár jednotlivců, které to zajímalo. Nezbývalo mu nic jiného, než začít jezdit za mistry do Bratislavy a studovat u nich. V mezidobí se pokoušel zorganizovat ukázky Kajukenbo a představit ho veřejnosti. Během toho se snažil intenzivně trénovat a navštěvoval semináře. Dalším důležitým mezníkem pro něj byla účast na  seminářích pod vedením velmistra Bruno Rebela (9. Duan kajukenbo a Chinese kempo), který je přímým žákem dříve zmíněného Charlese Gaylorda. Kajukenbo neodolal a pustil se do něj s maximálním úsilím. V roce 2017 otevřel první oddíl výhradně zaměřený na Kajukenbo v ČR. Ten nadále vede a snaží se vychovat své nástupce, kteří převezmou štafetu.
+    </p>
+    <p data-aos="fade-up">
+        V roce 2018 založil národní Českou federaci kempo a kajukenbo (dříve Kajukenbo Česká republika,z.s). Podařilo se mu s přáteli realizovat zajímavé ukázky pro veřejnost, semináře a více než úspěšně se reprezentovali na Mistrovství světa United Wolrd Sports Kempo Federation, kde s kolegy opakovaně získal několik titulů mistrů světa v kategorii Street Self-Defence. Obecně celá reprezentace ČR uspěla a dosáhla mnoha pódiových výsledků. V letech 2022 a 2023 se účastnila několika mezinárodních závodů pod hlavičkou UWSKF a získali více jak 30 medailových umístění.  Česká federace má za cíl nastavit v Kajukenbo jednotný řád a systém, tak aby bylo možné garantovat jednotné tréninkové postupy a jejich kvalitu a rovněž  jednoznačná pravidla pro udělování technických stupňů.
     </p>
     
 </div>
@@ -22,5 +32,20 @@
 <style>
     .rectangle-container p {
         margin: 10px 0;
+        margin-bottom: 15px;
     }
 </style>
+
+<script>
+    // Inicializace AOS s vlastním nastavením
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            offset: 120,
+            delay: 50,
+            duration: 300,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false
+        });
+    });
+</script>

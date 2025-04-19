@@ -9,7 +9,6 @@ namespace CfkkWeb.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Článek musí mít nadpis")]
         public string Title { get; set; }
-        [Required(ErrorMessage = "Článek musí obsahovat text")]
         public string Text { get; set; }
         public string? PicturePath { get; set; }
         public string? Author { get; set; }

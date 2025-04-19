@@ -1,20 +1,20 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 17px;
-  }
+    html {
+        font-size: 17px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -25,34 +25,44 @@ body {
 h1, h2, h3, h4, h5, h6{
     color: #ffd32c;
 }
+.hero {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
 
 a,p, table, label{
     color: white;
 }
 
-a:hover {
-    color: #ffd32c;
+    a:hover {
+        color: #ffd32c;
+    }
+
+.navbar {
+    border-bottom: none !important;
+    box-shadow: 0 3px 5px rgba(50, 50, 50, 1) !important; 
 }
 
 .custom-nav-tabs .nav-link {
-    background-color: #0C0C0C; /* Dark background */
-    color: #f8f9fa; /* Light text */
-    border: 0.5px solid #f8f9fa; /* Match border to active button color */
+    background-color: #0C0C0C; 
+    color: #f8f9fa; 
+    border: 0.5px solid #f8f9fa; 
     transition: background-color 0.3s, color 0.3s;
 }
 
     .custom-nav-tabs .nav-link:hover {
-        color: #ffd32c; /* Highlight text on hover */
-        border-color: #ffd32c; /* Highlighted border */
-        border-width: 1px; /* Optional: increase border width */
+        color: #ffd32c; 
+        border-color: #ffd32c; 
+        border-width: 1px; 
     }
 
     .custom-nav-tabs .nav-link.active {
-        background-color: transparent; /* Transparent background */
-        color: #f8f9fa; 
-        border-color: #ffd32c; /* Highlighted border */
-        border-width: 1px; /* Optional: increase border width */
-        border-style: solid; /* Solid border */
+        background-color: transparent; 
+        color: #f8f9fa;
+        border-color: #ffd32c; 
+        border-width: 1px; 
+        border-style: solid; 
     }
 
 .menu-navbar .nav-link:hover {
@@ -64,57 +74,56 @@ a:hover {
 }
 
 .menu-navbar .nav-link {
-    transition: color 0.3s ease; /* Optional: smooth color change */
+    transition: color 0.3s ease;
 }
 
 
 .menu-navbar .dropdown-menu .dropdown-item {
-    transition: color 0.3s ease; /* Smooth hover effect */
+    transition: color 0.3s ease;
 }
 
-    /* Change text color on hover without a background color */
+    
     .menu-navbar .dropdown-menu .dropdown-item:hover {
-        color: #ffd32c !important; /* Custom hover text color */
-        background-color: transparent !important; /* Disable hover background */
+        color: #ffd32c !important; 
+        background-color: transparent !important; 
     }
 
-/* Optional: Style dropdown toggle as well */
 .menu-navbar .dropdown-toggle:hover {
-    color: #ffd32c !important; /* Custom hover text color for the dropdown toggle */
-    background-color: transparent !important; /* Disable hover background */
+    color: #ffd32c !important; 
+    background-color: transparent !important; 
 }
 
 .article-image {
-    width: 100%; 
-    height: auto; 
-    max-width: 700px; 
-    object-fit: cover; 
-    border-radius: 8px; 
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 
 .custom-carousel {
-    max-width: 100%; /* Full width */
-    max-height: 500px; /* Set maximum height */
-    margin: 0 auto; /* Center the carousel horizontally */
-    overflow: hidden; /* Hide any overflow outside the carousel */
+    max-width: 100%; 
+    max-height: 500px; 
+    margin: 0 auto; 
+    overflow: hidden; 
 }
 
-    /* Ensure images fit proportionally within the carousel */
+    
     .custom-carousel .carousel-inner img {
-        width: 100%; /* Scale the image to fit the carousel width */
-        height: 100%; /* Scale the image to fit the carousel height */
-        object-fit: cover; /* Crop the image to fill the dimensions without distortion */
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
     }
 
 @media (max-width: 768px) {
     .custom-carousel {
-        max-width: 100%; /* Full width on smaller screens */
-        max-height: 250px; /* Reduce height for smaller devices */
+        max-width: 100%; 
+        max-height: 250px; 
     }
 }
 
 #summernote-editor {
-    background-color: #000000 !important; /* White background */
-    color: #ffffff !important; /* Black text color */
+    background-color: #000000 !important; 
+    color: #ffffff !important; 
 }

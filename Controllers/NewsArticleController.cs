@@ -61,9 +61,53 @@ namespace CfkkWeb.Controllers
             return View(model);
         }
 
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult PublishUnpublish(int id, bool publish)
         {
             new PublishUnpublishNewsArticleCommand().Execute(id, publish);
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Policy = "AdminOnly")]
+        public IActionResult Delete(int id)
+        {
+            new DeleteNewsArticleCommand().Execute(id);
+            return RedirectToAction("Index");
+
+        }
+
+        [Authorize]
+        public IActionResult Edit(int id)
+        {
+            var model = new NewsArticleBuilder().Build(id);
+
+            return View(model);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(IFormFile Picture, NewsArticleModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var newModel = new NewsArticleBuilder().Build();
+                return View(newModel);
+            }
+            if (Picture != null)
+            {
+                var fileName = Path.GetFileName(Picture.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/news_images", fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Picture.CopyToAsync(stream);
+                }
+
+                model.PicturePath = $"/uploads/news_images/{fileName}";
+            }
+
+            new EditNewsArticleCommand().Execute(model);
+
             return RedirectToAction("Index");
         }
 

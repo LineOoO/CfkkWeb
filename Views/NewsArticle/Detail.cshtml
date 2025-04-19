@@ -1,20 +1,34 @@
-﻿@model CfkkWeb.Models.NewsArticleModel
+﻿@using System.Net
+
+@model CfkkWeb.Models.NewsArticleModel
 @{
     var title = Model.Title;
     ViewData["Title"] = $"{title}";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Model.Text = WebUtility.HtmlDecode(Model.Text);
 }
 
-<div class="container my-4">
+<div class="container my-4" data-aos="fade-up">
     <h2 class="text-center">@Model.Title</h2>
     <hr class="border border-warning border-1 opacity-50" />
-    <div class="text-center">
-        <img class="img-fluid rounded" src="@Model.PicturePath" />
-    </div>
-    <p class="text-justify mt-3">@Model.Text</p>
+    @Html.Raw(Model.Text);
     <div class="text-end text-light">
         <span>@Model.Author</span> <span>dne</span> <span>@Model.CreatedDate.ToString("dd.MM.yyyy")</span>
     </div>
 </div>
+
+<script>
+    // Inicializace AOS s vlastním nastavením
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            offset: 120,
+            delay: 50,
+            duration: 300,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false
+        });
+    });
+</script>
 
 

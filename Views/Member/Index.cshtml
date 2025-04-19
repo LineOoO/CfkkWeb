@@ -6,42 +6,39 @@
 
 <h2>Seznam členů</h2>
 
-<table class="table table-responsive-sm table-striped table-dark text-light" id="example">
-    <tr>
-        <th>Jméno</th>
-        <th>Příjmení</th>
-        <th>Datum narození</th>
-        <th>Email</th>
-        <th>Telefon</th>
-        <th>Klub</th>
-        <th>Pás</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tbody>
-    @foreach (var member in Model.Members)
-    {
+<table class="table table-responsive-sm table-striped table-dark text-light" id="dataTable">
+    <thead>
         <tr>
-            <td>@member.FirstName</td>
-            <td>@member.LastName</td>
-            <td>@member.BirthDate.ToString("dd/MM/yyyy")</td>
-            <td>@member.Email</td>
-            <td>@member.PhoneNum</td>
-            <td>@member.Wp_ClubName</td>
-            <td>@member.BeltName - @member.BeltColor</td>
-            <td><a href="@Url.Action("Edit","Member", new { id = member.Id })"><i class="bi bi-pen-fill"></i></a></td>
-            <td><a href="@Url.Action("Delete","Member", new { id = member.Id })" data-del-confirm="Opravdu odstranit člena?"><i class="bi bi-trash3-fill"></i></a></td>
+            <th>Jméno</th>
+            <th>Příjmení</th>
+            <th>Datum narození</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Klub</th>
+            <th>Pás</th>
+            <th data-orderable="false"></th>
+            <th data-orderable="false"></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var member in Model.Members)
+        {
+            <tr>
+                <td>@member.FirstName</td>
+                <td>@member.LastName</td>
+                <td>@member.BirthDate.ToString("dd/MM/yyyy")</td>
+                <td>@member.Email</td>
+                <td>@member.PhoneNum</td>
+                <td>@member.Wp_ClubName</td>
+                <td>@member.BeltName - @member.BeltColor</td>
+                <td><a href="@Url.Action("Edit","Member", new { id = member.Id })"><i class="bi bi-pen-fill"></i></a></td>
+                <td><a href="@Url.Action("Delete","Member", new { id = member.Id })" data-del-confirm="Opravdu odstranit člena?"><i class="bi bi-trash3-fill"></i></a></td>
+            </tr>
+        }
     </tbody>
 </table>
 
 
 
-<button class="btn btn-secondary" onclick="location.href='@Url.Action("NewMember","Member")'">Přidat člena</button>
+<button class="btn btn-secondary" onclick="location.href='@Url.Action("NewMember","Member")'" style="margin: 10px;">Přidat člena</button>
 
-<script>
-    jQuery(document).ready(function () {
-        jQuery('#example').DataTable();
-    });
-</script>

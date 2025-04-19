@@ -7,7 +7,7 @@
 <h1>@Model.Name</h1>
 
 
-<table class="table table-striped table-dark text-light">
+<table class="table table-striped table-dark text-light" id="dataTable">
     <thead>
         <tr>
             <th>Jméno</th>
@@ -16,7 +16,8 @@
             <th>Email</th>
             <th>Telefon</th>
             <th>Pás</th>
-            <th></th>
+            <th data-orderable="false"></th>
+            <th data-orderable="false"></th>
         </tr>
     </thead>
     @foreach (var member in Model.ClubMembers)
@@ -28,6 +29,7 @@
             <td>@member.Email</td>
             <td>@member.PhoneNum</td>
             <td>@member.BeltName - @member.BeltColor</td>
+            <td></td>
             <td><a href="@Url.Action("Edit","Member", new { id = member.Id })"><i class="bi bi-pen-fill"></i></a></td>
         </tr>
     }

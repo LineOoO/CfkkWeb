@@ -46,7 +46,6 @@ namespace CfkkWeb.Controllers
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Username),
-
             };
 
             if (user.IsAdmin)
@@ -58,6 +57,7 @@ namespace CfkkWeb.Controllers
             var principal = new ClaimsPrincipal(identity);
 
             await HttpContext.SignInAsync("CookieAuth", principal);
+            TempData["Message"] = "Uživatel se úspěšně přihlásil.";
             return RedirectToAction("Index", "Home");
         }
 
@@ -73,6 +73,7 @@ namespace CfkkWeb.Controllers
         {
             Console.WriteLine("Logout action triggered.");
             await HttpContext.SignOutAsync("CookieAuth");
+            TempData["Message"] = "Uživatel byl úspěšně odhlášen.";
             return RedirectToAction("Index", "Home");
         }
 
