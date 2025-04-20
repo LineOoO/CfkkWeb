@@ -65,7 +65,7 @@
     <div class="tab-pane fade" id="publishedArticles" role="tabpanel" aria-labelledby="publishedArticles-tab">
         <br />
         <h5>Seznam publikovaných článků</h5>
-        <table class="table table-responsive-sm table-striped table-dark text-light text-center" id="dataTable">
+        <table class="table table-responsive-sm table-striped table-dark text-light text-center">
             <thead>
                 <tr>
                     <th></th>
@@ -107,7 +107,7 @@
     <div class="tab-pane fade" id="unpublishedArticles" role="tabpanel" aria-labelledby="unpublishedArticles-tab">
         <br />
         <h5>Seznam nepublikovaných článků</h5>
-        <table class="table table-responsive-sm table-striped table-dark text-light text-center" id="dataTable">
+        <table class="table table-responsive-sm table-striped table-dark text-light text-center">
             <thead>
                 <tr>
                     <th></th>
@@ -146,3 +146,23 @@
         </table>
     </div>
 </div>
+
+<script>
+        $(document).ready(function () {
+        let table = $('#dataTableArticles').DataTable({
+            responsive: true,
+            info: false,
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/cs.json'
+            },
+
+            rowReorder: {
+                selector: 'td:nth-child(3)'
+            }
+
+
+        });
+
+
+    });
+</script>

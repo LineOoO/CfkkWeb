@@ -6,7 +6,7 @@
 
 <h2>Kluby</h2>
 <div class="col-md-5">
-    <table class="table table-responsive-sm  table-striped table-dark text-light" id="dataTable">
+    <table class="table table-responsive-sm  table-striped table-dark text-light" id="dataTableClub">
         <thead>
             <tr>
                 <th>Název</th>
@@ -33,3 +33,25 @@
 
 
 <button class="btn btn-secondary" onclick="location.href='@Url.Action("NewClub","Club")'">Přidat klub</button>
+
+
+
+<script>
+        $(document).ready(function () {
+        let table = $('#dataTableClub').DataTable({
+            responsive: true,
+            info: false,
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/cs.json'
+            },
+
+            rowReorder: {
+                selector: 'td:nth-child(1)'
+            }
+
+
+        });
+
+
+    });
+</script>
